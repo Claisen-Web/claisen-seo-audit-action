@@ -1,5 +1,5 @@
 const fs = require('fs');
-const glob = require('glob');
+const { glob } = require('glob');
 
 const QUIZ_LINK_REGEX = /\]\([^)]*\/quiz\//i;
 const BLOG_LINK_REGEX = /\]\([^)]*\/blog\//i;
@@ -13,8 +13,8 @@ function checkFile(filePath) {
   return { filePath, hasQuiz, hasBlog, hasMeta };
 }
 
-glob('**/*.md', { ignore: 'node_modules/**' }, (err, files) => {
-  if (err) throw err;
+(async () => {
+  const files = await glob('**/*.md', { ignore: 'node_modules/**' });
   let failed = false;
   const results = files.map(checkFile);
   results.forEach(({ filePath, hasQuiz, hasBlog, hasMeta }) => {
@@ -34,4 +34,4 @@ glob('**/*.md', { ignore: 'node_modules/**' }, (err, files) => {
   } else {
     console.log('\nAll Markdown files passed SEO checks!');
   }
-}); 
+})(); 
