@@ -1,0 +1,8 @@
+name: 'Claisen SEO Audit Action'
+description: 'Scans Markdown docs for required SEO tags (quiz links, blog links, meta descriptions) and fails the build if missing.'
+runs:
+  using: 'node16'
+  main: 'index.js'
+branding:
+  icon: 'search'
+  color: 'blue' 

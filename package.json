@@ -1,0 +1,12 @@
+{
+  "name": "claisen-seo-audit-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to scan Markdown docs for required SEO tags.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "glob": "^10.3.10"
+  }
+} 

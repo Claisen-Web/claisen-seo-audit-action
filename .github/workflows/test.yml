@@ -1,0 +1,11 @@
+name: SEO Audit Test
+on:
+  push:
+  pull_request:
+jobs:
+  seo-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run SEO Audit
+        uses: ./ 
